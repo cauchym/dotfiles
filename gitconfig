@@ -1,0 +1,98 @@
+[user]
+	name = cauchym
+	email = detaramewo.iuna@gmail.com
+
+[core]
+	editor = nvim
+	ignorecase = false
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=2 -RFX
+
+[apply]
+	whitespace = fix
+
+[branch]
+	autosetuprebase = always
+
+[fetch]
+	prune = true
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = 227 bold
+	whitespace = red reverse
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[commit]
+	template = ~/.gitmessage
+	gpgsign = false
+
+[diff]
+	renames = copies
+
+[diff "bin"]
+	textconv = hexdump -v -C
+
+[help]
+	autocorrect = 1
+
+[merge]
+	log = true
+
+[alias]
+	st = status
+	amend = commit --amend
+	fixcommit = commit --fixup
+	precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
+	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
+	history = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
+	discard = checkout --
+	remotes = remote -v
+	nevermind = !git reset --hard HEAD && git clean -d -f
+	unmerged = diff --name-only --diff-filter=U
+	subupdate = submodule update --init --recursive
+	subupdate-all = submodule foreach git pull origin master
+	pull-requst = !fzf-hub-pull-requests
+	pr = pull-requst
+	prc = !hub pull-request
+	issue = !fzf-hub-issues
+	isc = !hub issue create
+	cc = !fzf-git-checkout
+
+[ghq]
+	root = ~/ghq
+	root = ~/.go/src
+
+[credential]
+	helper = osxkeychain
+
+[include]
+	path = ~/.gitconfig.local

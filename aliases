@@ -1,0 +1,52 @@
+# ------------------------------
+# General
+# ------------------------------
+alias vim='nvim'
+alias curl='httpstat'
+alias history='history 1'
+alias hub='GITHUB_HOST=$(git config --get remote.origin.url | awk "match($0, /^https:\/\/(.+?)\/(.+?)\/(.+?)\.git$/, m) {print m[1]}") hub'
+alias reload='source ~/.zshrc'
+
+# ------------------------------
+# List
+# ------------------------------
+alias l='ls -1A --color'
+alias la='ll -A --color'
+alias lc='lt -c --color'
+alias lk='ll -Sr --color'
+alias ll='ls -lh --color'
+alias lr='ll -R --color'
+alias ls='ls --color'
+alias lt='ll -tr --color'
+alias lu='lt -u --color'
+alias lx='ll -XB --color'
+
+# ------------------------------
+# fzf
+# ------------------------------
+alias repo='ghq list -p | fzf'
+alias repoc='cd "$(repo)"'
+alias repob='open https://$(ghq list | fzf)'
+alias viml='fzf-git-ls-files'
+
+alias sshl='fzf-ssh-list'
+
+alias dockerl='docker logs -f $(docker ps | fzf | cut -d " " -f 1)'
+alias dockere='docker exec -it $(docker ps | fzf | cut -d " " -f 1)'
+
+# ------------------------------
+# fasd
+# ------------------------------
+alias a='fasd -a'
+alias s='fasd -si'
+alias d='fasd -d'
+alias f='fasd -f'
+alias sd='fasd -sid'
+alias sf='fasd -sif'
+alias z='"$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1'
+alias zz='fasd_cd -d -i'
+
+# Custom local file
+if [[ -f ${HOME}/.aliases.local ]]; then
+  source ${HOME}/.aliases.local
+fi
