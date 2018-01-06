@@ -16,6 +16,7 @@ install::brew_cask() {
     caffeine
     clipy
     docker
+    dropbox
     firefox
     google-cloud-sdk
     google-chrome
