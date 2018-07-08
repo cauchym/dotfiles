@@ -31,8 +31,10 @@ install::brew_cask() {
     rescuetime
     shiftit
     slack
+    unity
     vagrant
     virtualbox
+    visual-studio-code
     xquartz
   )
 
