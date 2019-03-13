@@ -34,7 +34,7 @@ done
 if [[ ! -d ${HOME}/.config ]]; then
   mkdir ${HOME}/.config
 fi
-cd config
+cd .config
 for name in *; do
   if [[ -L ${XDG_CONFIG_HOME:-$HOME/.config}/$name ]]; then
     unlink ${XDG_CONFIG_HOME:-$HOME/.config}/$name
@@ -49,6 +49,10 @@ if [[ ! -d ${HOME}/.zplug ]]; then
 fi
 source ${HOME}/.zshrc
 
+# install...
+FORCE=1
+source ${HOME}/.dotfiles/setup/install.zsh
+
 # replace zsh
 echo 'update using zsh path? (y/n)'
 read confirmation
@@ -59,7 +63,3 @@ if [[ ${confirmation} = "y" || ${confirmation} = "Y" ]]; then
   chsh -s /usr/local/bin/zsh
   source ${HOME}/.zshrc
 fi
-
-# install...
-FORCE=1
-source setup/install.zsh
