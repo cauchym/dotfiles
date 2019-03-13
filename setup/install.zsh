@@ -1,6 +1,7 @@
 #!/bin/zsh
 # include util functions
 source ${HOME}/.dotfiles/setup/util.zsh
+cd ${HOME}/.dotfiles
 
 # zplug
 util::confirm 'install zplug plugins?'
