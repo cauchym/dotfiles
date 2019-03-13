@@ -1,7 +1,16 @@
 #!/bin/zsh
 # setup script.
+# exit when git is not found
+git --version | grep 'git version'
+if [ "$?" -eq 0 ]
+then
+  echo 'git is found'
+else
+  echo 'install git first'
+  exit
+fi
 
-# downlod dotfiles
+# downlaod dotfiles
 if [[ ! -e ${HOME}/.dotfiles ]]; then
   git clone --recursive https://github.com/cauchym/dotfiles.git ${HOME}/.dotfiles
 else
