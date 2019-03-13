@@ -94,8 +94,8 @@ export LESSOPEN='|/usr/local/bin/src-hilite-lesspipe.sh %s'
 # ------------------------------
 # GCP Settings
 # ------------------------------
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # ------------------------------
 # Key bindings
