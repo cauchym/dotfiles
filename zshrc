@@ -39,8 +39,9 @@ zplug load
 # ztyle
 # ------------------------------
 # color
-eval $(dircolors ${ZPLUG_HOME}/repos/seebi/dircolors-solarized/dircolors.ansi-dark)
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# OS X does not have dircolors command
+# eval $(dircolors ${ZPLUG_HOME}/repos/seebi/dircolors-solarized/dircolors.ansi-dark)
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # completion
 zstyle ':completion:*' verbose yes
